@@ -37,18 +37,24 @@ function ImageUploader() {
   };
 
   return (
-    <div>
-      <h1>Upload an Image</h1>
+    <div className="ImageUploader">
+      <h1 className="ImageUploader__heading">Upload an Image</h1>
+      <div className="ImageUploader__contents">
 
-      <input type="file" accept="image/*" onChange={fileSelectedHandler} />
+      
+
+      <input className="browseBtn__ImgUploader" type="file" accept="image/*" onChange={fileSelectedHandler} />
+<div className="previewImg__container">
 
       {imagePreview && (
         <img src={imagePreview} className="preview_img" alt="this" />
-      )}
+        )}
 
-      <button onClick={fileUploadHandler}>Upload</button>
+        </div>
+      <button className="uploadBtn__ImgUploader" onClick={fileUploadHandler}>Upload</button>
 
       <p>{message}</p>
+        </div>
     </div>
   );
 }
