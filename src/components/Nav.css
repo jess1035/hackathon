@@ -144,6 +144,7 @@ code {
     margin-right: 40px;
     display: flex;
     align-items: center;
+	color: #85c6f673;
 }
 
 .frontiers>button{
@@ -153,8 +154,9 @@ code {
     font-size: 0.75em;
     color: #85c6f673;
     box-shadow: 0 0 32px #0003;
-    background: #66666600;
+    background: rgba(153, 170, 187, 0.258);
     cursor: pointer;
+	border: 1px solid #85c6f673 ;
     
     
 }

@@ -1,12 +1,17 @@
-import React from 'react';
-import './Result.css'
+import './Result.css';
 
-export default function Result() {
-  return (
-    <div className="Results">
+import React, { useState } from 'react';
 
-     Result!<br></br>
-    You are MaidenLess
-    </div>
-  )
+
+export default function Result(property) {
+    
+
+   
+    return (
+        <>
+        this is {property.name}
+        </>
+    );
 }
+
+
