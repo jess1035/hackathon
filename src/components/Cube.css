@@ -1,0 +1,48 @@
+.scene {
+    width: 300px;
+    height: 300px;
+    margin: 75px auto 0;
+    perspective: 1200px;
+  }
+  
+  .cube {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    animation: example 10s linear infinite;
+  }
+  
+  .side {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    box-sizing: border-box;
+    border: 5px solid rgb(0, 0, 0);
+    background-color: rgba(6, 6, 6, 0.5);
+    padding: 120px 0;
+    font: 50px/1 'Trebuchet MS', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  .back {
+    transform: translateZ(-150px);
+  }
+  .top {
+    transform: translateY(-90px) rotateX(90deg);
+  }
+  .bottom {
+    transform: translateY(90px) rotateX(90deg);
+  }
+  .front {
+    transform: translateZ(150px);
+  }
+  .top, .bottom {
+    background-color: rgba(45, 66, 101, 0.685)
+  }
+  
+  @keyframes example {
+    100% { transform: rotateX(360deg); }
+  }

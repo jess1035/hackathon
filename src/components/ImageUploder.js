@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
 import "./ImageUploder.css";
 function ImageUploader() {
@@ -35,26 +35,66 @@ function ImageUploader() {
         setMessage("Error uploading image");
       });
   };
+  const targetRef = useRef(null);
+
+  const handleClick = () => {
+    targetRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   return (
     <div className="ImageUploader">
-      <h1 className="ImageUploader__heading">Upload an Image</h1>
-      <div className="ImageUploader__contents">
 
+      <div className="someshit">
+      <h1>Instructions</h1>
+      <p>
+        1.Use a neutral background: Choose a plain, light-colored background to highlight your feet clearly.<br></br>
+      </p>
+      <p>
+        2.Position your feet: Stand or sit comfortably in a well-lit area and position your feet to capture the desired view.<br></br>
+      </p>
+      <p>
+        3.Use good lighting: Make sure the area is well-lit to capture clear, detailed images of your feet.<br></br>
+      </p>
+      <p>
+        4.Avoid filters or enhancements: To provide accurate images, avoid using filters or enhancements that can alter the appearance of your feet.<br></br>
+      </p>
+        </div>
       
+      <div className="ImageUploader__contents">
+        <h1 className="ImageUploader__heading">Upload an Image</h1>
 
-      <input className="browseBtn__ImgUploader" type="file" accept="image/*" onChange={fileSelectedHandler} />
-<div className="previewImg__container">
-
-      {imagePreview && (
-        <img src={imagePreview} className="preview_img" alt="this" />
-        )}
-
+        <input
+          className="browseBtn__ImgUploader"
+          type="file"
+          accept="image/*"
+          onChange={fileSelectedHandler}
+        />
+        <div className="previewImg__container">
+          {imagePreview && (
+            <img src={imagePreview} className="preview_img" alt="this" />
+          )}
         </div>
-      <button className="uploadBtn__ImgUploader" onClick={fileUploadHandler}>Upload</button>
+        <button
+          className="uploadBtn__ImgUploader"
+          onClick={() => {
+            fileUploadHandler();
+            handleClick();
+          }}
+        >
+          Upload
+        </button>
 
-      <p>{message}</p>
-        </div>
+    <a href="#">
+        <span></span>
+        <div class="liquid"></div>
+    </a>
+        <p>{message}</p>
+
+        <div ref={targetRef}></div>
+      </div>
     </div>
   );
 }
